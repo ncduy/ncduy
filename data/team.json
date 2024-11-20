@@ -1,0 +1,5 @@
+[
+  { "name": "Alice Johnson", "role": "CEO", "bio": "Leading the team to success." },
+  { "name": "Bob Smith", "role": "CTO", "bio": "In charge of all things tech." },
+  { "name": "Carol Williams", "role": "Designer", "bio": "Making things beautiful." }
+]
