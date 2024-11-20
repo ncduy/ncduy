@@ -1,35 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Fetch team data
-  fetch('data/team.json')
-    .then(response => response.json())
-    .then(data => {
-      const teamContainer = document.getElementById("team-container");
-      data.forEach(member => {
-        const memberCard = document.createElement("div");
-        memberCard.classList.add("card");
-        memberCard.innerHTML = `
-          <h3>${member.name}</h3>
-          <p><strong>Role:</strong> ${member.role}</p>
-          <p>${member.bio}</p>
-        `;
-        teamContainer.appendChild(memberCard);
-      });
-    });
+  const links = document.querySelectorAll('#sidebar ul li a');
+  const content = document.getElementById('content');
 
-  // Fetch product data
-  fetch('data/product.json')
-    .then(response => response.json())
-    .then(data => {
-      const productContainer = document.getElementById("product-container");
-      const productCard = document.createElement("div");
-      productCard.classList.add("card");
-      productCard.innerHTML = `
-        <h3>${data.name}</h3>
-        <p>${data.description}</p>
-        <ul>
-          ${data.features.map(feature => `<li>${feature}</li>`).join('')}
-        </ul>
-      `;
-      productContainer.appendChild(productCard);
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = link.getAttribute('data-content');
+
+      // Use AJAX to load the content
+      fetch(`data/${url}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.text();
+        })
+        .then(data => {
+          content.innerHTML = data;
+        })
+        .catch(error => {
+          content.innerHTML = `<p>Error loading content: ${error.message}</p>`;
+        });
     });
+  });
 });
