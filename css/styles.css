@@ -17,7 +17,6 @@ body {
   background-color: #007bff;
   color: white;
   padding: 20px;
-  text-align: center;
   border-bottom: 4px solid #0056b3;
 }
 
@@ -29,9 +28,12 @@ body {
 #top-nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 15px;
-  flex-wrap: wrap;
+}
+
+#top-nav ul li {
+  display: inline-block;
 }
 
 #top-nav ul li a {
@@ -47,8 +49,7 @@ body {
 /* Container */
 #container {
   display: flex;
-  flex-direction: row; /* Default layout for larger screens */
-  min-height: calc(100vh - 84px); /* Account for header and footer */
+  min-height: calc(100vh - 84px); /* Header + Footer height adjustment */
 }
 
 /* Sidebar */
@@ -57,10 +58,6 @@ body {
   background: #343a40;
   color: white;
   padding: 20px;
-  position: fixed; /* Ensure it stays in place on larger screens */
-  top: 84px; /* Below the header */
-  bottom: 0;
-  left: 0;
 }
 
 #sidebar h2 {
@@ -72,12 +69,17 @@ body {
   list-style-type: none;
 }
 
+#sidebar ul li {
+  margin-bottom: 10px;
+}
+
 #sidebar ul li a {
   color: white;
   text-decoration: none;
   padding: 10px;
   display: block;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 #sidebar ul li a:hover {
@@ -86,11 +88,20 @@ body {
 
 /* Content */
 #content {
-  margin-left: 270px; /* Account for the sidebar width */
   flex-grow: 1;
   padding: 20px;
   background: white;
   border-left: 1px solid #ddd;
+}
+
+#content h1 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+#content p {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 /* Footer */
@@ -99,40 +110,30 @@ body {
   padding: 10px;
   background-color: #007bff;
   color: white;
+  font-size: 14px;
   border-top: 4px solid #0056b3;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   #container {
-    flex-direction: column; /* Stack sidebar and content */
+    flex-direction: column;
   }
 
   #sidebar {
-    position: relative; /* Allow sidebar to flow naturally */
-    width: 100%; /* Full-width on smaller devices */
+    width: 100%;
     border-right: none;
     border-bottom: 1px solid #ddd;
   }
 
   #content {
-    margin-left: 0; /* No margin needed */
-    width: 100%;
+    margin: 0;
   }
 }
 
 @media (max-width: 480px) {
   #header h1 {
     font-size: 20px;
-  }
-
-  #top-nav ul {
-    flex-direction: column; /* Stack links vertically */
-    gap: 10px;
-  }
-
-  #top-nav ul li a {
-    font-size: 14px;
   }
 
   #sidebar ul li a {
