@@ -8,16 +8,16 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f8f9fa;
-  color: #333;
+  color: #333333; /* Dark Gray */
+  background-color: #f8f8f8; /* Light Gray */
 }
 
 /* Header */
 #header {
-  background-color: #007bff;
+  background-color: #002f6c; /* Deep Blue */
   color: white;
   padding: 20px;
-  border-bottom: 4px solid #0056b3;
+  border-bottom: 4px solid #00509e; /* Slightly lighter blue for detail */
 }
 
 #header h1 {
@@ -55,13 +55,13 @@ body {
 /* Sidebar */
 #sidebar {
   width: 250px;
-  background: #343a40;
+  background-color: #333333; /* Dark Gray */
   color: white;
   padding: 20px;
 }
 
 #sidebar h2 {
-  color: #ffc107;
+  color: #ffffff; /* Pure White */
   margin-bottom: 15px;
 }
 
@@ -83,7 +83,7 @@ body {
 }
 
 #sidebar ul li a:hover {
-  background-color: #495057;
+  background-color: #00509e; /* Highlight with lighter blue */
 }
 
 /* Content */
@@ -92,11 +92,14 @@ body {
   padding: 20px;
   background: white;
   border-left: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 #content h1 {
   font-size: 22px;
   margin-bottom: 15px;
+  color: #002f6c; /* Deep Blue */
 }
 
 #content p {
@@ -108,10 +111,10 @@ body {
 #footer {
   text-align: center;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #002f6c; /* Deep Blue */
   color: white;
   font-size: 14px;
-  border-top: 4px solid #0056b3;
+  border-top: 4px solid #00509e;
 }
 
 /* Responsive Design */
