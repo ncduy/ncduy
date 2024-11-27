@@ -8,7 +8,7 @@ body {
 #header {
   background-color: #4CAF50;
   color: white;
-  padding: 15px 20px;
+  padding: 10px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +17,7 @@ body {
 
 .header-title h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 #top-nav ul {
@@ -26,16 +26,17 @@ body {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 #top-nav ul li {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 #top-nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #top-nav ul li a:hover {
@@ -52,10 +53,10 @@ body {
   width: 250px;
   background-color: #333;
   color: white;
-  padding: 20px;
-  height: calc(100vh - 62px); /* Adjust height for header */
+  padding: 15px;
+  height: calc(100vh - 50px); /* Adjust height for header */
   position: fixed;
-  top: 62px;
+  top: 50px;
 }
 
 #sidebar h2 {
@@ -68,13 +69,13 @@ body {
 }
 
 #sidebar ul li {
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 #sidebar ul li a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #sidebar ul li a:hover {
@@ -84,8 +85,8 @@ body {
 /* Content */
 #content {
   margin-left: 270px;
-  margin-top: 62px; /* Account for header height */
-  padding: 20px;
+  margin-top: 50px; /* Account for header height */
+  padding: 15px;
   width: calc(100% - 270px);
 }
 
@@ -121,14 +122,45 @@ body {
 
 @media (max-width: 480px) {
   .header-title h1 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   #top-nav ul li {
     margin: 5px 0;
   }
 
+  #top-nav ul li a {
+    font-size: 12px;
+  }
+
   #sidebar ul li a {
+    font-size: 14px;
+  }
+
+  #sidebar {
+    padding: 10px;
+  }
+
+  #content {
+    padding: 10px;
+  }
+}
+
+/* For Very Small Screens (360px or less) */
+@media (max-width: 360px) {
+  .header-title h1 {
     font-size: 16px;
+  }
+
+  #sidebar ul li a {
+    font-size: 12px;
+  }
+
+  #content {
+    font-size: 14px;
+  }
+
+  #top-nav ul li a {
+    font-size: 10px;
   }
 }
